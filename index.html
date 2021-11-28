@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStudio</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body">
+    <header class="start">
+        <div class="top conteiner">
+            <nav class="top--nav">
+                <!-- этот логотип навигационная ссылка -->
+                <a href="#" id="link-header" class="logo"><span>Web</span>Studio</a>
+                <ul class="top--nav--pages">
+                    <li class="nav--pages">
+                        <a href="#" class=" hover notactive active-alltime">Студия</a>
+                    </li>
+                    <li class="nav--pages">
+                        <a href="./portfolio.html" class="hover notactive">Портфолио</a>
+                    </li>
+                    <li class="nav--pages">
+                        <a href="#" class="hover notactive">Контакты</a>
+                    </li>
+
+                </ul>
+            </nav>
+            <ul class="top--address">
+                <li><a href="mailto:info@devstudio.com" class="hover top--adress--link">info@devstudio.com</a></li>
+                <li><a href="tel:+380961111111" class="hover">+38 096 111 11 11</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="main">
+        <section class="hero">
+            <h1 class="hero--idea">Эффективные решения<br>для вашего бизнеса</h1>
+            <button class="hero__button" type="button">Заказать услугу</button>
+        </section>
+        <section class="section we">
+            <div class="conteiner">
+                <!-- симантический подзоголовок -->
+                <h2 class="none" style="color: var(--fon-color); font-size: 1px;">Особенности</h2>
+                <ul class="we--about">
+                    <li class="we--puncts">
+                        <h3 class="we--title">Внимание к деталям</h3>
+                        <p class="we--about--text">Идейные соображения, а также начало повседневной работы по
+                            формированию позиции.</p>
+                    </li>
+                    <li class="we--puncts">
+                        <h3 class="we--title">Пунктуальность</h3>
+                        <p class="we--about--text">Задача организации, в особенности же рамки и место обучения кадров
+                            влечет за собой.</p>
+                    </li>
+                    <li class="we--puncts">
+                        <h3 class="we--title">Планирование</h3>
+                        <p class="we--about--text">Равным образом консультация с широким активом в значительной степени
+                            обуславливает.</p>
+                    </li>
+                    <li class="we--puncts">
+                        <h3 class="we--title">Современные технологии</h3>
+                        <p class="we--about--text">Значимость этих проблем настолько очевидна, что реализация плановых
+                            заданий.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="photo">
+            <div class="conteiner">
+                <h2 class="title2">Чем мы занимаемся</h2>
+                <ul class="pictures">
+                    <li class="pictures--work">
+                        <img src="./images/img-1.jpg" width="370" height="294" alt="Пишем програмный код">
+                    </li>
+                    <li class="pictures--work">
+                        <img src="./images/img-2.jpg" width="370" height="294" alt="Разработка для мобильных устройств">
+                    </li>
+                    <li class="pictures--work">
+                        <img src="./images/img-3.jpg" width="370" height="294" alt="Тестирование приложений">
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="comando section">
+            <div class=" conteiner">
+                <h2 class="title2">Наша команда</h2>
+                <ul class="portrets">
+                    <li class="portrets--card">
+                        <img src="./images/photo-1.jpg" width="270" height="260" alt="Фотопортрет мужчины">
+                        <div class="portret--text">
+                            <h3 class="portrets--title">Игорь Демьяненко</h3>
+                            <p class="profesional">Product Designer</p>
+                        </div>
+                    </li>
+                    <li class="portrets--card">
+                        <img src="./images/photo-2.jpg" width="270" height="260" alt="Фотопортрет женчины">
+                        <div class="portret--text">
+                            <h3 class="portrets--title">Ольга Репина</h3>
+                            <p class="profesional">Frontend Developer</p>
+                        </div>
+                    </li>
+                    <li class="portrets--card">
+                        <img src="./images/photo-3.jpg" width="270" height="260" alt="Фотопортрет мужчины">
+                        <div class="portret--text">
+                            <h3 class="portrets--title">Николай Тарасов</h3>
+                            <p class="profesional">Marketing</p>
+                        </div>
+                    </li>
+                    <li class="portrets--card">
+                        <img src="./images/photo-4.jpg" width="270" height="260" alt="Фотопортрет мужчины">
+                        <div class="portret--text">
+                            <h3 class="portrets--title">Михаил Ермаков</h3>
+                            <p class="profesional">UI Designer</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer class="bottom--info">
+        <div class="conteiner">
+            <!-- это логотип сайта он ведет на начало главной страницы -->
+            <a href="#link-header" class="logo"><span>Web</span>Studio</a>
+            <address class="bottom--address">
+                <ul>
+                    <li class="adress--city address--write">г. Киев, пр-т Леси Украинки, 26</li>
+                    <li class="address--write">
+                        <a class="bottom--address--link hover" href="mailto:info@devstudio.com">info@devstudio.com</a>
+                    </li>
+                    <li class="address--write">
+                        <a class="bottom--address--link hover" href="tel:+380961111111">+38 096 111 11 11</a>
+                    </li>
+                </ul>
+            </address>
+        </div>
+    </footer>
+    </body>
+
+</html>
