@@ -2,6 +2,7 @@
   --text-color: #757575;
   --title-color: #212121;
   --accent-color: #2196f3;
+  --main-button-focus-color: #188ce8;
   --white-color: #ffffff;
   --background-color: #2f303a;
   --fone-color: #f5f4fa;
@@ -10,6 +11,10 @@
   --header-border: #ececec;
   --border-portfolio-card: #eeeeee;
   --social-link-color: #afb1b8;
+  --hover-card-color: rgba(33, 150, 243, 0.9);
+  --our-works-fone: rgba(47, 48, 58, 0.8);
+  --modal-window-bgc: rgba(0, 0, 0, 0.2);
+  --close-button-color: #000000;
 }
 
 body {
@@ -137,6 +142,17 @@ img {
 
 .nav.current {
   color: var(--accent-color);
+  position: relative;
+}
+
+.nav,
+.auth-nav,
+.auth {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.auth-nav-letter,
+.auth-nav-tel {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav:hover,
@@ -175,6 +191,10 @@ img {
 }
 
 .header {
+  display: block;
+
+  z-index: 9;
+  width: 100%;
   background-color: var(--white-color);
   font-size: 14px;
   line-height: 1.14;
@@ -242,10 +262,7 @@ img {
   height: 120px;
   background-color: var(--fone-color);
   margin-bottom: 30px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: auto;
-  padding-right: auto;
+  align-items: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -311,6 +328,7 @@ img {
   padding: 10px 32px;
   justify-content: center;
   margin: 0 auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button {
@@ -322,28 +340,32 @@ img {
   padding: 6px 22px;
 }
 
-/* .filter-button {
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-} */
-
-/* box-shadow:1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12) */
+.button {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .button:focus,
 .button:hover,
 .current-button,
-.main-button:focus,
-.main-button:hover,
 .social-link:hover,
 .social-link:focus {
   background-color: var(--accent-color);
   color: var(--white-color);
 }
+
+.main-button:focus,
+.main-button:hover {
+  background-color: var(--main-button-focus-color);
+}
+
 .button:focus,
 .button:hover {
   box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 1px 2px rgb(0 0 0 / 8%),
     0px 2px 2px rgb(0 0 0 / 12%);
 }
+
 .title {
   color: var(--title-color);
   font-weight: 700;
@@ -393,11 +415,9 @@ img {
   justify-content: center;
   cursor: pointer;
 }
-.client-link:focus,
-.client-list-icon,
-/* .client-link:hover, */
+
 .client-list-icon {
-  fill: var(--social-link-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:focus .client-list-icon,
@@ -405,16 +425,36 @@ img {
   fill: var(--accent-color);
 }
 
-.social-link-icon,
+.social-link {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-link-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.connect-us-social-link {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.connect-us-social-link-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .client-list-icon {
   fill: var(--social-link-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-link-icon {
+  fill: var(--social-link-color);
+}
+.social-link:hover,
+.social-link:focus,
+.connect-us-social-link:hover,
+.connect-us-social-link:focus {
+  background-color: var(--accent-color);
 }
 
 .social-link:hover .social-link-icon,
-.social-link:focus .social-link-icon,
-.connect-us-social-link:hover .connect-us-social-link-icon,
-.connect-us-social-link:focus .connect-us-social-link-icon {
-  background-color: var(--accent-color);
+.social-link:focus .social-link-icon {
   fill: var(--white-color);
 }
 .social-link-list-item {
@@ -460,13 +500,11 @@ img {
   border: 1px solid var(--border-portfolio-card);
   border-top: 0;
 }
-
-.card:hover {
-  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    0px 1px 1px rgba(0, 0, 0, 0.12);
+.card {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.card-link:focus .all-works-container {
+.card:hover,
+.card:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
 }
@@ -479,8 +517,7 @@ img {
 }
 .clients-list-item {
   padding: 0;
-  border: 1px solid var(--social-link-color);
-  border-radius: 4px;
+
   align-items: center;
   justify-content: center;
   display: flex;
@@ -497,23 +534,24 @@ img {
   width: 100%;
   height: 100%;
   display: flex;
+  border: 1 px solid var(--social-link-color);
+  border-radius: 4px;
   align-items: center;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.clients-list-item:hover,
-.clients-list-item:focus {
+.client-link:hover,
+.client-link:focus {
   border: 1px solid var(--accent-color);
 }
 
-.clients-list-item:hover .client-list-icon,
-.clients-list-item:focus .client-list-icon {
+.client-link:hover .client-list-icon,
+.client-link:focus .client-list-icon {
   fill: var(--accent-color);
 }
-.clients-list-item:focus .client-list-icon {
-  fill: var(--accent-color);
-}
-.clients-list-item:focus .clients-list-item {
-  border: 1px solid var(--accent-color);
+
+.client-link,
+.client-link {
+  border: 1px solid var(--social-link-color);
 }
 
 .span-footer {
@@ -599,4 +637,126 @@ img {
 .connect-us-list-item:hover,
 .connect-us-social-link:focus {
   background-color: var(--accent-color);
+}
+
+.nav.current::after {
+  position: absolute;
+  content: "";
+  background-color: var(--accent-color);
+  display: block;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+}
+
+.thumb {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.text-card-description {
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: 0.03em;
+}
+.text-card {
+  text-decoration: none;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--hover-card-color);
+  color: var(--white-color);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 63px 24px;
+}
+
+.card-link:focus .text-card,
+.card-link:hover .text-card {
+  transform: translateY(0);
+  opacity: 1;
+}
+.our-works-description {
+  position: relative;
+  display: block;
+}
+.our-works-description-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  color: var(--white-color);
+  text-transform: uppercase;
+}
+.our-works-description-text-container {
+  display: flex;
+  position: absolute;
+  background-color: var(--our-works-fone);
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-window {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--modal-window-bgc);
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 528px;
+  min-height: 581px;
+  background-color: var(--white-color);
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.close-modal-window {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-window.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-window.is-hidden .modal {
+  transform: rotate(300deg) scale(0.01);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

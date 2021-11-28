@@ -13,6 +13,7 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -22,9 +23,9 @@
             <a class="logo" href="https://info@devstudio.com">Web<span class="span-header">Studio</span></a>
             <nav>
                 <ul class="nav-list">
-                    <li class="list"><a class="nav current" href="./index.html" >Студия</a></li>
-                    <li class="list"><a class="nav" href="./portfolio.html">Портфолио</a></li>
-                    <li class="list"><a class="nav" href="#" >Контакты</a></li>
+                    <li class="list"><a class="nav current" href="./index.html" target="_self">Студия</a></li>
+                    <li class="list"><a class="nav" href="./portfolio.html" target="_self">Портфолио</a></li>
+                    <li class="list"><a class="nav" href="#" target="_self">Контакты</a></li>
                 </ul>
             </nav>
 
@@ -46,7 +47,7 @@
         <section class="section-hero">
             <div class="container container-hero">
                 <h1 class="hero">Эффективные решения для вашего бизнеса</h1>
-                <button class="main-button" type="button">Заказать услугу</button>
+                <button class="main-button" type="button" data-modal-open>Заказать услугу</button>
             </div>
         </section>
         <section class="benefits">
@@ -55,7 +56,7 @@
                 <ul class="benefits-list">
                     <li class="list">
                         <div class="benefits-icon">
-                            <svg class="benefits-icon-antenna">
+                            <svg class="benefits-icon-antenna" width="70" height="70">
                                 <use href="./images/symbol-defs.svg#icon-antenna"></use>
                             </svg>
                         </div>
@@ -65,7 +66,7 @@
                     </li>
                     <li class="list">
                         <div class="benefits-icon">
-                            <svg class="benefits-icon-clock">
+                            <svg class="benefits-icon-clock" width="70" height="70">
                                 <use href="./images/symbol-defs.svg#icon-clock-1"></use>
                             </svg>
                         </div>
@@ -75,7 +76,7 @@
                     </li>
                     <li class="list">
                         <div class="benefits-icon">
-                            <svg class="benefits-icon-diagram">
+                            <svg class="benefits-icon-diagram" width="70" height="70">
                                 <use href="./images/symbol-defs.svg#icon-diagram-1"></use>
                             </svg>
                         </div>
@@ -85,7 +86,7 @@
                     </li>
                     <li class="list">
                         <div class="benefits-icon">
-                            <svg class="benefits-icon-astronaut">
+                            <svg class="benefits-icon-astronaut" width="70" height="70">
                                 <use href="./images/symbol-defs.svg#icon-astronaut-1"></use>
                             </svg>
                         </div>
@@ -102,16 +103,31 @@
                 <h2 class="h2-title">Чем мы занимаемся</h2>
                 <ul class="h2-title-list">
                     <li class="list">
-                        <img class="h2-title-list-foto" src="./images/img-1.jpg" alt="фотография примера работы"
-                            width="370" height="294">
+                        <div class="our-works-description">
+                            <img class="h2-title-list-foto" src="./images/img-1.jpg" alt="фотография примера работы"
+                                width="370" height="294">
+                            <div class="our-works-description-text-container">
+                                <p class="our-works-description-text">Десктопные приложения</p>
+                            </div>
+                        </div>
                     </li>
                     <li class="list">
-                        <img class="h2-title-list-foto" src="./images/img-2.jpg" alt="фотография примера работы"
-                            width="370" height="294">
+                        <div class="our-works-description">
+                            <img class="h2-title-list-foto" src="./images/img-2.jpg" alt="фотография примера работы"
+                                width="370" height="294">
+                            <div class="our-works-description-text-container">
+                                <p class="our-works-description-text">Мобильные приложения</p>
+                            </div>
+                        </div>
                     </li>
                     <li class="list">
-                        <img class="h2-title-list-foto" src="./images/img-3.jpg" alt="фотография примера работы"
-                            width="370" height="294">
+                        <div class="our-works-description">
+                            <img class="h2-title-list-foto" src="./images/img-3.jpg" alt="фотография примера работы"
+                                width="370" height="294">
+                            <div class="our-works-description-text-container">
+                                <p class="our-works-description-text">Дизайнерские решения</p>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -354,6 +370,16 @@
             </div>
         </div>
     </footer>
+    <div class="modal-window is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="close-modal-window" data-modal-close>
+                <svg width="20" height="20">
+                    <use href="./images/symbol-defs.svg#icon-close-black"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
